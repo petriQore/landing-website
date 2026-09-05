@@ -1,0 +1,540 @@
+/* Ahmed Limam — landing page
+   Dark theme. Flat colors only: no gradients. */
+
+:root {
+  --bg: #0E1117;
+  --surface: #161C26;
+  --surface-2: #1B2230;
+  --ink: #EDF1F7;
+  --muted: #9AA5B5;
+  --line: #263041;
+  --accent: #FF6B3D;      /* signal orange — primary attention */
+  --accent-soft: rgba(255, 107, 61, 0.12);
+  --accent-2: #67E8F9;    /* cyan — secondary highlight */
+  --green: #3ED598;
+  --radius: 10px;
+  --max-width: 46rem;
+  --sans: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", Consolas, "Courier New", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: 4.5rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 5vw, 2rem);
+}
+
+/* ---------- scroll progress ---------- */
+
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: var(--accent);
+  z-index: 50;
+}
+
+/* ---------- header ---------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(14, 17, 23, 0.86);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+.header-inner {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-block: 0.95rem;
+}
+
+.site-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.site-name:hover {
+  color: var(--accent);
+}
+
+.site-header nav {
+  display: flex;
+  gap: 1.4rem;
+  flex-wrap: wrap;
+}
+
+.site-header nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  position: relative;
+  padding-block: 0.2rem;
+  transition: color 0.2s ease;
+}
+
+.site-header nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s cubic-bezier(0.2, 0.65, 0.25, 1);
+}
+
+.site-header nav a:hover,
+.site-header nav a.active {
+  color: var(--ink);
+}
+
+.site-header nav a:hover::after,
+.site-header nav a.active::after {
+  transform: scaleX(1);
+}
+
+/* ---------- hero ---------- */
+
+.hero {
+  padding-block: 5rem 0.5rem;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 1.75rem;
+  padding: 0.35rem 0.9rem 0.35rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.85rem;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--green);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .dot {
+    animation: pulse 2.4s ease-out infinite;
+  }
+}
+
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(62, 213, 152, 0.45); }
+  70%  { box-shadow: 0 0 0 10px rgba(62, 213, 152, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(62, 213, 152, 0); }
+}
+
+h1 {
+  font-size: clamp(2.5rem, 8vw, 3.9rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  margin: 0 0 1rem;
+}
+
+.role {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 0 0 1.4rem;
+}
+
+.lede {
+  max-width: 38rem;
+  margin: 0;
+}
+
+.cta-links {
+  list-style: none;
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0;
+  margin: 1.9rem 0 0;
+}
+
+.cta-links a {
+  display: inline-block;
+  padding: 0.5rem 1.15rem;
+  border: 1px solid #3A4658;
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+}
+
+.cta-links a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.cta-links a.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #14100C;
+  font-weight: 600;
+}
+
+.cta-links a.primary:hover {
+  background: #FF8259;
+  border-color: #FF8259;
+  color: #14100C;
+}
+
+/* ---------- sections ---------- */
+
+section {
+  padding-top: 3.4rem;
+}
+
+h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.5rem;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--accent);
+  margin-top: 0.6rem;
+}
+
+/* ---------- cards ---------- */
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.6rem 1.7rem;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  border-color: #3A4658;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+}
+
+.entry h3,
+.skill h3,
+.team-card h3 {
+  font-size: 1.08rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.meta {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0.35rem 0 1rem;
+}
+
+.entry ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.entry li {
+  padding-left: 0.35rem;
+}
+
+.entry li + li {
+  margin-top: 0.75rem;
+}
+
+.entry li::marker {
+  color: var(--accent);
+}
+
+/* ---------- projects ---------- */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.project-grid .card {
+  height: 100%;
+}
+
+.aside {
+  margin-top: 1.75rem;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+/* ---------- achievements ---------- */
+
+.award-list {
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding: 0;
+}
+
+.award-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0.85rem 1rem;
+  border: 1px solid transparent;
+  border-bottom-color: var(--line);
+  border-radius: 6px;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.award-list li:hover {
+  background: var(--accent-soft);
+  border-color: rgba(255, 107, 61, 0.35);
+}
+
+.award-list li .meta {
+  margin: 0;
+}
+
+.award {
+  font-weight: 600;
+}
+
+.award-list li.featured {
+  border-color: rgba(255, 107, 61, 0.45);
+  background: var(--accent-soft);
+}
+
+.award-list li.featured .award {
+  color: var(--accent);
+}
+
+.team-card {
+  border-left: 3px solid var(--accent-2);
+}
+
+.team-card .meta {
+  margin-bottom: 0.75rem;
+}
+
+/* ---------- skills ---------- */
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.skill h3 {
+  color: var(--accent-2);
+  font-family: var(--mono);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.skill p {
+  margin: 0.4rem 0 0;
+  font-size: 0.98rem;
+}
+
+/* ---------- contact & footer ---------- */
+
+#contact {
+  padding-bottom: 6rem;
+}
+
+#contact > p {
+  max-width: 34rem;
+}
+
+.email-link {
+  display: inline-block;
+  margin: 1.4rem 0 0.5rem;
+  font-family: var(--mono);
+  font-size: clamp(1.1rem, 3.5vw, 1.55rem);
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.15rem;
+  transition: color 0.2s ease;
+}
+
+.email-link:hover {
+  color: var(--accent);
+}
+
+#contact .cta-links {
+  margin-top: 2.25rem;
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding-block: 1.6rem;
+}
+
+.site-footer p {
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.85rem;
+}
+
+/* ---------- links & states ---------- */
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent-2);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--accent);
+  color: #14100C;
+  font-weight: 600;
+  padding: 0.6rem 1.1rem;
+  border-radius: 0 0 6px 0;
+  z-index: 60;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
+::selection {
+  background: var(--accent);
+  color: #14100C;
+}
+
+/* ---------- reveal animations ---------- */
+
+html.js .rv {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.55s cubic-bezier(0.2, 0.65, 0.25, 1),
+              transform 0.55s cubic-bezier(0.2, 0.65, 0.25, 1);
+}
+
+html.js .rv.on {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+html.js.rv-off .rv {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+/* ---------- small screens ---------- */
+
+@media (max-width: 760px) {
+  .project-grid,
+  .skill-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 3.75rem;
+  }
+
+  section {
+    padding-top: 3.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .award-list li {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .cta-links a,
+  .site-header nav a,
+  .site-header nav a::after,
+  .award-list li {
+    transition: none;
+  }
+
+  .cta-links a:hover {
+    transform: none;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+}

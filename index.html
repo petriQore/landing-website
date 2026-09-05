@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <title>Ahmed Limam — Network Engineering Student &amp; Pentester</title>
+  <meta name="description" content="Ahmed Limam — network engineering student at INSAT, Tunis, and web application / Active Directory penetration tester. Projects, achievements, and contact.">
+  <meta property="og:title" content="Ahmed Limam">
+  <meta property="og:description" content="Network engineering student at INSAT, Tunis, and web application / Active Directory penetration tester. Projects, achievements, and contact.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="site-name" href="#top">Ahmed Limam</a>
+      <nav aria-label="Sections">
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+
+    <section class="hero" id="top" aria-label="Introduction">
+      <p class="status rv"><span class="dot" aria-hidden="true"></span>Open to offensive security internships</p>
+      <h1 class="rv">Ahmed Limam</h1>
+      <p class="role rv">Network engineering student at INSAT, Tunis. Penetration tester at SmartSkills.</p>
+      <p class="lede rv">
+        I study how networks are supposed to work, and spend most of my time
+        learning how they fail. That currently means web application and
+        Active Directory penetration tests for real clients, CTFs on
+        weekends, and writing up what I learn on my blog.
+      </p>
+      <ul class="cta-links rv">
+        <li><a href="https://petriqore.github.io/" target="_blank" rel="noopener">Blog</a></li>
+        <li><a href="https://github.com/petriQore" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/ahmed-limam-a58561301/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a class="primary" href="assets/Ahmed-Limam-CV.pdf" download>CV (PDF)</a></li>
+      </ul>
+    </section>
+
+    <section id="experience" aria-label="Experience">
+      <h2 class="rv">Experience</h2>
+
+      <article class="card entry rv" data-stagger>
+        <h3>Penetration Tester &amp; Security Auditor — SmartSkills</h3>
+        <p class="meta">Tunis, July 2025 – present</p>
+        <ul>
+          <li class="rv">
+            Run security engagements for client organizations — 30+ this
+            year across web application tests and Active Directory
+            assessments, with 70% of them turning up high-severity findings
+            or worse: RCE, IDOR, authentication bypass, AD privilege
+            escalation paths.
+          </li>
+          <li class="rv">
+            Assess client infrastructure systematically and triage findings
+            by exploitability and business impact, so the loudest bug is
+            not automatically the first fix.
+          </li>
+          <li class="rv">
+            Write the client-facing reports: full exploitation chains
+            translated into remediation steps the owning team can act on.
+          </li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="projects" aria-label="Projects">
+      <h2 class="rv">Projects</h2>
+
+      <div class="project-grid">
+        <article class="card entry rv">
+          <h3>Autonomous pentesting agent</h3>
+          <p class="meta">Python, LangGraph — 2026</p>
+          <p>
+            A LangGraph tool-calling agent that chains offensive tooling
+            through a recon, exploitation, and reporting pipeline, with a
+            registry-driven catalog that injects whatever tools are
+            installed straight into the agent's prompts.
+          </p>
+          <p>
+            15+ deterministic exploit modules — SQL and NoSQL injection,
+            XSS, SSTI, XXE, SSRF, path traversal, command injection, JWT
+            forging, TOTP — driven by declarative payload libraries, with
+            evidence-verified findings auto-rendered into markdown and HTML
+            reports.
+          </p>
+        </article>
+
+        <article class="card entry rv">
+          <h3>Self-hosted VPN mesh</h3>
+          <p class="meta">Headscale, Tailscale, Python, Azure — 2025</p>
+          <p>
+            A private VPN mesh with no third-party coordination server:
+            Headscale as a self-hosted Tailscale control plane, exit nodes
+            on Azure VMs across several regions, and a Python backend for
+            switching exit nodes on demand.
+          </p>
+          <p>
+            A Linux Electron client replaces the usual CLI setup with a
+            one-click connect. It is what I use every day.
+          </p>
+          <p><a href="https://github.com/petriQore/back-vpn" target="_blank" rel="noopener">Related code on GitHub</a></p>
+        </article>
+      </div>
+
+      <p class="aside rv">
+        Smaller experiments live on
+        <a href="https://github.com/petriQore" target="_blank" rel="noopener">GitHub</a>:
+        DLL sideloading in C++, a Rust multiplayer server, and others.
+      </p>
+    </section>
+
+    <section id="achievements" aria-label="Achievements">
+      <h2 class="rv">Achievements</h2>
+
+      <ul class="award-list" data-stagger>
+        <li class="featured rv">
+          <span class="award">Certified Red Team Professional (CRTP)</span>
+          <span class="meta">Altered Security, 2025 — <a href="https://www.credential.net/8e0a83f8-c382-4d6a-8d17-b578304ac64a#acc.iwfts3OT" target="_blank" rel="noopener">verify credential</a></span>
+        </li>
+        <li class="rv">
+          <span class="award">1st place — CyberSphere Congress, advanced CTF</span>
+          <span class="meta">2025</span>
+        </li>
+        <li class="rv">
+          <span class="award">1st place — Securinets EPS CTF</span>
+          <span class="meta">2025</span>
+        </li>
+        <li class="rv">
+          <span class="award">1st place — Spark CTF</span>
+          <span class="meta">2025</span>
+        </li>
+        <li class="rv">
+          <span class="award">4th place — Brunner International CTF</span>
+          <span class="meta">2025</span>
+        </li>
+      </ul>
+
+      <article class="card team-card rv">
+        <h3>Securinets Tunisia — technical team</h3>
+        <p class="meta">2025 – 2026</p>
+        <p>
+          Member of the national technical team: helping organize CTF
+          competitions and building challenges for the digital forensics and
+          OSINT categories across multiple CTFs.
+        </p>
+      </article>
+    </section>
+
+    <section id="education" aria-label="Education">
+      <h2 class="rv">Education</h2>
+      <article class="card entry rv">
+        <h3>Network Engineering — INSAT</h3>
+        <p class="meta">Institut National des Sciences Appliquées et de Technologie, Tunis, 2022 – 2027</p>
+        <p>Five-year engineering degree, network engineering major.</p>
+      </article>
+    </section>
+
+    <section id="skills" aria-label="Skills">
+      <h2 class="rv">Skills</h2>
+      <div class="skill-grid" data-stagger>
+        <div class="card skill rv">
+          <h3>Networking</h3>
+          <p>TCP/IP, UDP, DNS, DHCP, VPN, NAT, subnetting, VLANs</p>
+        </div>
+        <div class="card skill rv">
+          <h3>Security</h3>
+          <p>Web application penetration testing (SQLi, XSS, CSRF, IDOR, SSRF, auth bypass, business-logic flaws), Active Directory attack paths, reverse engineering, digital forensics</p>
+        </div>
+        <div class="card skill rv">
+          <h3>Tools</h3>
+          <p>Burp Suite, Nmap, Wireshark, Ghidra, IDA, Autopsy, Volatility</p>
+        </div>
+        <div class="card skill rv">
+          <h3>Programming</h3>
+          <p>Python, Java, JavaScript, PHP, C, C++, Rust, SQL, Bash</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" aria-label="Contact">
+      <h2 class="rv">Contact</h2>
+      <p class="rv">
+        Email is the fastest way to reach me. I graduate in 2027 and am
+        open to internships in security.
+      </p>
+      <a class="email-link rv" href="mailto:ahmed.limam@insat.ucar.tn">ahmed.limam@insat.ucar.tn</a>
+      <ul class="cta-links rv">
+        <li><a href="https://petriqore.github.io/" target="_blank" rel="noopener">Blog</a></li>
+        <li><a href="https://github.com/petriQore" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/ahmed-limam-a58561301/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a class="primary" href="assets/Ahmed-Limam-CV.pdf" download>CV (PDF)</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Ahmed Limam — Tunis, Tunisia</p>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
